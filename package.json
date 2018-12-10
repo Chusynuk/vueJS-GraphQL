@@ -1,15 +1,15 @@
 {
-  "name": "fullstack-vue-graphql-starter",
+  "name": "vue-grapql",
   "version": "1.0.0",
-  "description": "Starter for Full-Stack Vue-GraphQL-Apollo Projects",
+  "description": "Vue-GraphQL-Apollo",
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "client": "cd client && npm start",
+    "client": "cd client && npm run serve",
     "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
   },
   "keywords": [],
-  "author": "Reed Barger",
+  "author": "Eloi",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.0.0-rc.7",
