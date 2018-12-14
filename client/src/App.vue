@@ -97,6 +97,11 @@ export default {
 }
 </script>
 <style scoped>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition-property: all;
