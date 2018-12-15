@@ -1,30 +1,30 @@
 <template>
-  <v-app style="background: #E3E3EE">
-    <v-navigation-drawer
+  <VApp style="background: #E3E3EE">
+    <VNavigationDrawer
       app
+      v-model="sideNav"
       temporary
       fixed
-      v-model="sideNav"
     >
-      <v-toolbar
+      <VToolbar
         color="accent"
         dark
         flat
       >
-        <v-toolbar-side-icon @click="toggleSideNavBar"></v-toolbar-side-icon>
-        <router-link
+        <VToolbarSideIcon @click="toggleSideNavBar"></VToolbarSideIcon>
+        <RouterLink
           to="/"
           tag="span"
           style="cursor:pointer"
         >
           <h1 class="title pl-3">VueShare</h1>
-        </router-link>
-      </v-toolbar>
-      <v-divider></v-divider>
+        </RouterLink>
+      </VToolbar>
+      <VDivider/>
 
       <!-- side navbar links -->
-      <v-list>
-        <v-list-tile
+      <VList>
+        <VListTile
           v-for="item in sideNavItems"
           :key="item.title"
           :to="item.link"
@@ -33,41 +33,41 @@
             <v-icon>{{item.icon}}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>{{item.title}}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+        </VListTile>
+      </VList>
+    </VNavigationDrawer>
 
     <!-- Horizontal Navbar -->
-    <v-toolbar
+    <VToolbar
       fixed
       color="primary"
       dark
     >
-      <v-toolbar-side-icon @click="toggleSideNavBar"></v-toolbar-side-icon>
-      <v-toolbar-title class="hidden-xs-only">
-        <router-link
+      <VToolbarSideIcon @click="toggleSideNavBar"/>
+      <VToolbarTitle class="hidden-xs-only">
+        <RouterLink
           to="/"
           tag="span"
           style="cursor:pointer"
-        >Vue Share</router-link>
-      </v-toolbar-title>
+        >Vue Share</RouterLink>
+      </VToolbarTitle>
 
-      <v-spacer></v-spacer>
+      <VSpacer/>
 
       <!-- search input -->
-      <v-text-field
+      <VTextField
         flex
         prepend-icon="search"
         placeholder="Search posts"
         color="warning"
         single-line
         hide-details
-      ></v-text-field>
+      />
 
-      <v-spacer></v-spacer>
+      <VSpacer/>
 
-      <v-toolbar-items class="hidden-xs-only">
-        <v-btn
+      <VToolbarItems class="hidden-xs-only">
+        <VBtn
           flat
           v-for="item in horizontalNavItems"
           :key="item.title"
@@ -78,18 +78,18 @@
             class="hidden-sm-only"
           >{{item.icon}}</v-icon>
           {{item.title}}
-        </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+        </VBtn>
+      </VToolbarItems>
+    </VToolbar>
 
     <!-- App content -->
     <main>
-      <v-container class="mt-4"></v-container>
-      <transition name="fade">
-        <router-view />
-      </transition>
+      <VContainer class="mt-4" />
+      <Transition name="fade">
+        <RouterView />
+      </Transition>
     </main>
-  </v-app>
+  </VApp>
 </template>
 
 <script>
@@ -113,8 +113,7 @@ export default {
 			]
 		},
 		sideNavItems () {
-			return [
-				{ icon: 'chat', title: 'Posts', link: '/posts' },
+			return [ { icon: 'chat', title: 'Posts', link: '/posts' },
 				{ icon: 'lock_open', title: 'Sign in', link: '/signin' },
 				{ icon: 'create', title: 'Sign up', link: '/signup' },
 			]

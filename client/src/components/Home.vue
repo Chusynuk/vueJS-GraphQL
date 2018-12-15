@@ -1,45 +1,47 @@
 <template>
-  <v-container text-xs-center>
-    <v-layout row>
-      <v-dialog
+  <VContainer text-xs-center>
+    <VLayout row>
+      <VDialog
         v-model="loading"
         persistent
         fullscreen
       >
-        <v-container fill-height>
-          <v-layout
+        <VContainer fill-height>
+          <VLayout
             row
             justify-center
             align-center
           >
-            <v-progress-circular
+            <VProgressCircular
               indeterminate
               :size="70"
               :width="7"
               color="secondary"
-            ></v-progress-circular>
-          </v-layout>
-        </v-container>
-      </v-dialog>
-    </v-layout>
-    <v-flex xs12>
-      <v-carousel
-        text-xs-center
+            />
+          </VLayout>
+        </VContainer>
+      </VDialog>
+    </VLayout>
+    <VFlex xs12>
+      <VCarousel
         v-if="!loading && posts.length > 0"
+        text-xs-center
         v-bind="{'cycle': true}"
         interval="4000"
       >
-        <v-carousel-item
+        <VCarouselItem
           v-for="post in posts"
           :key="post._id"
           :src="post.imageUrl"
         >
-          <h1 id="carousel__title">{{post.title}}</h1>
-          <h2></h2>
-        </v-carousel-item>
-      </v-carousel>
-    </v-flex>
-  </v-container>
+          <h1 id="carousel__title">
+            {{ post.title }}
+          </h1>
+          <h2 />
+        </VCarouselItem>
+      </VCarousel>
+    </VFlex>
+  </VContainer>
 </template>
 
 <script>
@@ -47,12 +49,12 @@
 import { mapGetters } from 'vuex'
 
 export default {
-	name: 'home',
+	name: 'Home',
+	computed: {
+		...mapGetters([ 'posts', 'loading' ])
+	},
 	created () {
 		this.handleGetCarouselPosts()
-	},
-	computed: {
-		...mapGetters(['posts', 'loading'])
 	},
 	methods: {
 		handleGetCarouselPosts () {

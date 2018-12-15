@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <VContainer>
     <h1>Posts</h1>
-  </v-container>
+  </VContainer>
 </template>
 
 <script>
