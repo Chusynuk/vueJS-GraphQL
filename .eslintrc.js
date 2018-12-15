@@ -9,7 +9,7 @@ module.exports = {
 
         "eslint:recommended"],
     "parserOptions": {
-        "ecmaVersion": 2017,
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "rules": {
@@ -34,6 +34,7 @@ module.exports = {
             "named": "always",
             "asyncArrow": "always"
         }],
-        "skipBlankLines": false
+        "skipBlankLines": false,
+        "no-multiple-empty-lines": [1, { "max": 1, "maxBOF": 1 }]
     }
 };

@@ -10,38 +10,38 @@ import Signup from '@/components/Auth/Signup'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  //base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/posts',
-      name: 'Posts',
-      component: Posts,
-    },
-    {
-      path: '/addpost',
-      name: 'addpost',
-      component: AddPost,
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: Profile,
-    },
-    {
-      path: '/signin',
-      name: 'signin',
-      component: Signin,
-    },
-    {
-      path: '/signup',
-      name: 'signup',
-      component: Signup,
-    },
-  ],
+	mode: 'history',
+	//base: process.env.BASE_URL,
+	routes: [
+		{
+			path: '/',
+			name: 'home',
+			component: Home,
+		},
+		{
+			path: '/posts',
+			name: 'Posts',
+			component: Posts,
+		},
+		{
+			path: '/addpost',
+			name: 'addpost',
+			component: AddPost,
+		},
+		{
+			path: '/profile',
+			name: 'profile',
+			component: Profile,
+		},
+		{
+			path: '/signin',
+			name: 'signin',
+			component: Signin,
+		},
+		{
+			path: '/signup',
+			name: 'signup',
+			component: Signup,
+		},
+	],
 })

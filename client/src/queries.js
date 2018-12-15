@@ -1,6 +1,5 @@
 import { gql } from 'apollo-boost'
 
-
 // Posts Queries
 export const GET_POSTS = gql`
 query {
@@ -10,8 +9,7 @@ query {
     imageUrl
   }
 }
-`;
-
+`
 
 // User Queries
 
@@ -24,7 +22,6 @@ query {
 
 // `
 
-
 // Posts Mutations
 
 // export const SET_POSTS = gql`
@@ -33,6 +30,5 @@ query {
 // }
 
 // `
-
 
 // Users Mutations

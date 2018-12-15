@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Signin"
-};
+	name: 'Signin'
+}
 </script>
 

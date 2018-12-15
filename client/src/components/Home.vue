@@ -1,10 +1,23 @@
 <template>
   <v-container text-xs-center>
     <v-layout row>
-      <v-dialog v-model="loading" persistent fullscreen>
+      <v-dialog
+        v-model="loading"
+        persistent
+        fullscreen
+      >
         <v-container fill-height>
-          <v-layout row justify-center align-center>
-            <v-progress-circular indeterminate :size="70" :width="7" color="secondary"></v-progress-circular>
+          <v-layout
+            row
+            justify-center
+            align-center
+          >
+            <v-progress-circular
+              indeterminate
+              :size="70"
+              :width="7"
+              color="secondary"
+            ></v-progress-circular>
           </v-layout>
         </v-container>
       </v-dialog>
@@ -16,7 +29,11 @@
         v-bind="{'cycle': true}"
         interval="4000"
       >
-        <v-carousel-item v-for="post in posts" :key="post._id" :src="post.imageUrl">
+        <v-carousel-item
+          v-for="post in posts"
+          :key="post._id"
+          :src="post.imageUrl"
+        >
           <h1 id="carousel__title">{{post.title}}</h1>
           <h2></h2>
         </v-carousel-item>
@@ -30,19 +47,19 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'home',
-  created() {
-    this.handleGetCarouselPosts()
-  },
-  computed: {
-    ...mapGetters(['posts', 'loading']),
-  },
-  methods: {
-    handleGetCarouselPosts() {
-      // reach out to Vuex store, fire action that gets posts for carousel
-      this.$store.dispatch('getPosts')
-    },
-  },
+	name: 'home',
+	created () {
+		this.handleGetCarouselPosts()
+	},
+	computed: {
+		...mapGetters(['posts', 'loading'])
+	},
+	methods: {
+		handleGetCarouselPosts () {
+			// reach out to Vuex store, fire action that gets posts for carousel
+			this.$store.dispatch('getPosts')
+		},
+	},
 }
 </script>
 <style scoped>
