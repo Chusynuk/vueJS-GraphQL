@@ -1,8 +1,8 @@
 <template>
   <VApp style="background: #E3E3EE">
     <VNavigationDrawer
-      app
       v-model="sideNav"
+      app
       temporary
       fixed
     >
@@ -11,16 +11,18 @@
         dark
         flat
       >
-        <VToolbarSideIcon @click="toggleSideNavBar"></VToolbarSideIcon>
+        <VToolbarSideIcon @click="toggleSideNavBar" />
         <RouterLink
           to="/"
           tag="span"
           style="cursor:pointer"
         >
-          <h1 class="title pl-3">VueShare</h1>
+          <h1 class="title pl-3">
+            VueShare
+          </h1>
         </RouterLink>
       </VToolbar>
-      <VDivider/>
+      <VDivider />
 
       <!-- side navbar links -->
       <VList>
@@ -29,30 +31,33 @@
           :key="item.title"
           :to="item.link"
         >
-          <v-list-tile-action>
-            <v-icon>{{item.icon}}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{item.title}}</v-list-tile-content>
+          <VListTileAction>
+            <VIcon>{{ item.icon }}</VIcon>
+          </VListTileAction>
+          <VListTileContent>{{ item.title }}</VListTileContent>
         </VListTile>
       </VList>
     </VNavigationDrawer>
 
     <!-- Horizontal Navbar -->
+    {{ showAddButton }}
     <VToolbar
       fixed
       color="primary"
       dark
     >
-      <VToolbarSideIcon @click="toggleSideNavBar"/>
+      <VToolbarSideIcon @click="toggleSideNavBar" />
       <VToolbarTitle class="hidden-xs-only">
         <RouterLink
           to="/"
           tag="span"
           style="cursor:pointer"
-        >Vue Share</RouterLink>
+        >
+          Vue Share
+        </RouterLink>
       </VToolbarTitle>
 
-      <VSpacer/>
+      <VSpacer />
 
       <!-- search input -->
       <VTextField
@@ -64,20 +69,22 @@
         hide-details
       />
 
-      <VSpacer/>
+      <VSpacer />
 
       <VToolbarItems class="hidden-xs-only">
         <VBtn
-          flat
           v-for="item in horizontalNavItems"
           :key="item.title"
+          flat
           :to="item.link"
         >
-          <v-icon
+          <VIcon
             left
             class="hidden-sm-only"
-          >{{item.icon}}</v-icon>
-          {{item.title}}
+          >
+            {{ item.icon }}
+          </VIcon>
+          {{ item.title }}
         </VBtn>
       </VToolbarItems>
     </VToolbar>
@@ -101,7 +108,12 @@ export default {
 	data () {
 		return {
 			sideNav: false,
-			//
+			props: {
+				showAddButton: {
+					type: Number,
+					required: true
+				}
+			}
 		}
 	},
 	computed: {

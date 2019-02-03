@@ -1,17 +1,18 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './components/Home.vue'
-import Posts from '@/components/Posts/Posts.vue'
-import AddPost from '@/components/Posts/AddPost'
 import Profile from '@/components/Auth/Profile'
 import Signin from '@/components/Auth/Signin'
 import Signup from '@/components/Auth/Signup'
+import AddPost from '@/components/Posts/AddPost'
+import Posts from '@/components/Posts/Posts.vue'
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(Router)
+import Home from './components/Home.vue'
 
-export default new Router({
+Vue.use( Router )
+
+export default new Router( {
 	mode: 'history',
-	//base: process.env.BASE_URL,
+	// base: process.env.BASE_URL,
 	routes: [
 		{
 			path: '/',
@@ -44,4 +45,4 @@ export default new Router({
 			component: Signup,
 		},
 	],
-})
+} )
