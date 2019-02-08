@@ -49,19 +49,19 @@
 import { mapGetters } from 'vuex'
 
 export default {
-	name: 'Home',
-	computed: {
-		...mapGetters( [ 'posts', 'loading' ] )
-	},
-	created () {
-		this.handleGetCarouselPosts()
-	},
-	methods: {
-		handleGetCarouselPosts () {
-			// reach out to Vuex store, fire action that gets posts for carousel
-			this.$store.dispatch( 'getPosts' )
-		},
-	},
+  name: 'Home',
+  computed: {
+    ...mapGetters(['posts', 'loading'])
+  },
+  created () {
+    this.handleGetCarouselPosts()
+  },
+  methods: {
+    handleGetCarouselPosts () {
+      // reach out to Vuex store, fire action that gets posts for carousel
+      this.$store.dispatch('getPosts')
+    },
+  },
 }
 </script>
 <style scoped>

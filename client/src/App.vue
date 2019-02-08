@@ -40,7 +40,7 @@
     </VNavigationDrawer>
 
     <!-- Horizontal Navbar -->
-    {{ showAddButton }}
+    <!-- {{ showAddButton }} -->
     <VToolbar
       fixed
       color="primary"
@@ -101,41 +101,41 @@
 <script>
 
 export default {
-	name: 'App',
-	components: {
-	},
-	data () {
-		return {
-			sideNav: false,
-			props: {
-				showAddButton: {
-					type: Number,
-					required: true
-				}
-			}
-		}
-	},
-	computed: {
-		horizontalNavItems () {
-			return [
-				{ icon: 'chat', title: 'Posts', link: '/posts' },
-				{ icon: 'lock_open', title: 'Sign in', link: '/signin' },
-				{ icon: 'create', title: 'Sign up', link: '/signup' },
-			]
-		},
-		sideNavItems () {
-			return [ { icon: 'chat', title: 'Posts', link: '/posts' },
-				{ icon: 'lock_open', title: 'Sign in', link: '/signin' },
-				{ icon: 'create', title: 'Sign up', link: '/signup' },
-			]
-		},
-	},
-	methods: {
-		toggleSideNavBar () {
-			this.sideNav = !this.sideNav
-		},
-		function () { return 'hola' }
-	},
+  name: 'App',
+  components: {
+  },
+  data () {
+    return {
+      sideNav: false,
+      props: {
+        showAddButton: {
+          type: Number,
+          required: true
+        }
+      }
+    }
+  },
+  computed: {
+    horizontalNavItems () {
+      return [
+        { icon: 'chat', title: 'Posts', link: '/posts' },
+        { icon: 'lock_open', title: 'Sign in', link: '/signin' },
+        { icon: 'create', title: 'Sign up', link: '/signup' },
+      ]
+    },
+    sideNavItems () {
+      return [{ icon: 'chat', title: 'Posts', link: '/posts' },
+      { icon: 'lock_open', title: 'Sign in', link: '/signin' },
+      { icon: 'create', title: 'Sign up', link: '/signup' },
+      ]
+    },
+  },
+  methods: {
+    toggleSideNavBar () {
+      this.sideNav = !this.sideNav
+    },
+    function () { return 'hola' }
+  },
 }
 </script>
 <style scoped>

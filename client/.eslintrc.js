@@ -2,9 +2,12 @@ module.exports = {
   'root': true,
   'env': {'browser': true, 'es6': true, 'node': true},
   'extends': [
-    //'eslint:recommended',
+    'eslint:recommended',
     'plugin:vue/recommended',
   ],
+  'globals': {
+    'angular': true,
+  },
   'parserOptions': {'ecmaVersion': 2018, 'sourceType': 'module'},
   'rules': {
     'indent': ['error', 'tab'],
@@ -26,7 +29,8 @@ module.exports = {
     ],
     'object-curly-spacing': ['error', 'always'],
     'no-useless-return': 'error',
-    'space-in-parens': ['error', 'always']
+    'space-in-parens': ['error', 'always'],
+    'space-in-brackets': ['error', 'always']
     //'array-bracket-newline': ['error', 'always']
     // object-property-newline: ["error", { "allowAllPropertiesOnSameLine": true
     // }] 'object-curly-newline': [
