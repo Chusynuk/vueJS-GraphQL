@@ -51,7 +51,7 @@ import { mapGetters } from 'vuex'
 export default {
 	name: 'Home',
 	computed: {
-		...mapGetters([ 'posts', 'loading' ])
+		...mapGetters( [ 'posts', 'loading' ] )
 	},
 	created () {
 		this.handleGetCarouselPosts()
@@ -59,7 +59,7 @@ export default {
 	methods: {
 		handleGetCarouselPosts () {
 			// reach out to Vuex store, fire action that gets posts for carousel
-			this.$store.dispatch('getPosts')
+			this.$store.dispatch( 'getPosts' )
 		},
 	},
 }

@@ -8,19 +8,19 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-Vue.use(VueApollo)
+Vue.use( VueApollo )
 
-export const defaultClient = new ApolloClient({
+export const defaultClient = new ApolloClient( {
 	uri: 'http://localhost:4000/graphql',
-})
+} )
 
-const ApolloProvider = new VueApollo({defaultClient})
+const ApolloProvider = new VueApollo( { defaultClient } )
 
 Vue.config.productionTip = false
 
-new Vue({
+new Vue( {
 	provide: ApolloProvider.provide(),
 	router,
 	store,
-	render: h => h(App),
-}).$mount('#app')
+	render: h => h( App ),
+} ).$mount( '#app' )

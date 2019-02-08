@@ -70,7 +70,6 @@
       />
 
       <VSpacer />
-
       <VToolbarItems class="hidden-xs-only">
         <VBtn
           v-for="item in horizontalNavItems"
